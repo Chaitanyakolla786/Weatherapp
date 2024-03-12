@@ -1,3 +1,60 @@
+.mainDiv{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width:100%;
+}
+
+.childDiv{
+  width:30%;
+  text-align: center;
+}
+
+input{
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+h1{
+  color: #db750b;
+}
+button{
+  padding: 10px 15px;
+  color: white;
+  background-color: #db750b;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+table, th, td { 
+  border: 1px solid black; 
+  border-collapse: collapse; 
+} 
+table{
+  width:19%;
+  margin: 5px;
+}
+th, td { 
+  padding: 5px; 
+  text-align: left; 
+} 
+.dateCol{
+  background-color: #db750b;
+}
+.subData{
+  background-color: #b0c3d5;
+}
+
+.dataDiv{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.childElement{
+  width:25%;
+}
+
 .App {
   text-align: center;
 }
