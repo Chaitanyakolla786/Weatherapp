@@ -1,6 +1,7 @@
 // App.js
 import React, { useState } from 'react';
 import WeatherService from './WeatherService';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
@@ -52,24 +53,28 @@ function App() {
   };
 
   return (
-    <div>
-      <div class="mainDiv">
-        <div class="childDiv"><h1>Weather in your city</h1></div>
-      <div class="childDiv">
-          <input
+    <main>
+      <header>
+        <div class="header-content">
+            <h1>Weather in your city  </h1>
+            <div class="input-button-group">
+            <input
             type="text"
-            placeholder="Enter city name"
+            placeholder="Enter location"
             value={cityName}
             onChange={(event) => setCityName(event.target.value)}
           />
-          <button onClick={fetchWeatherData}>? Search</button>
-          
-      </div>
-      </div>
+                <button onClick={fetchWeatherData}><span class="button-q">?</span> Search</button>
+            </div>
+        </div>
+    </header>
+
+
       {error && <div>{error}</div>}
       {weatherData && (
-        <div class="dataDiv">
+       <div class="row parentDiv">
           {weatherData.map((dayData, index) => (
+               <div class="col-12 col-md-2 mb-3">
             <table key={index}>
               <tr><th colspan="2" class="dateCol">Date: {new Date(dayData[0].dt_txt).toLocaleDateString()}</th></tr>
               <tr><th colspan="2" class="subData">Temperature</th></tr>
@@ -87,10 +92,11 @@ function App() {
                   <td> {dayData[0].main.humidity}</td> 
               </tr> 
             </table>
+            </div>
           ))}
         </div>
       )}
-    </div>
+    </main>
   );
 }
 
